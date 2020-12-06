@@ -34,6 +34,25 @@ const App = () => {
       </View>
       )
   }
+<<<<<<< HEAD
+=======
+
+  useEffect(()=> {
+    fetchCountriesData();
+  })
+
+  return (
+    <View>
+      <Button title="I am done thank god"/>
+      <FlatList
+        data={countriesData}
+        contentContainerStyle={styles.container}
+        keyExtractor={item => item.name}
+        renderItem={({item})=> <Text style={styles.text}>{item.name}</Text>}
+      />
+    </View>
+  );
+>>>>>>> fucked
 }
 
 export default App
