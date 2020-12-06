@@ -12,7 +12,7 @@ const EmployeeIdeaTextInput = () => {
     console.log('pressed');
     console.log(text + text2);
     
-    const response = await fetch('https://vast-ocean-93287.herokuapp.com/evanCompany/2/4', {
+    const response = await fetch('https://vast-ocean-93287.herokuapp.com/evanCompany/2', {
       method: 'PUT', // *GET, POST, PUT, DELETE, etc.
       headers: {
          'Content-Type': 'application/json'
