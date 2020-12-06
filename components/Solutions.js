@@ -13,7 +13,7 @@ const ViewSolutions = () => {
     const [arr1, UpdateArray] = React.useState([]);
 
     React.useEffect(() => {
-        fetch('https://vast-ocean-93287.herokuapp.com/evanCompany/2/4', {
+        fetch('https://vast-ocean-93287.herokuapp.com/evanCompany/2', {
         method: 'GET', // *GET, POST, PUT, DELETE, etc.
         headers: {
             'Content-Type': 'application/json'

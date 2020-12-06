@@ -3,10 +3,14 @@ import { StyleSheet, Text, Button, FlatList, View, TextInput } from 'react-nativ
 import InputField from './components/textdisplay'
 import EmployeeIdeaTextInput from './components/TextInput'
 import ViewSolutions from './components/Solutions'
+import ViewProblems from './components/Problems'
 
-export default class App extends Component {
 
-  render() {
+const App = () => {
+  const [problemId, setProblemId] = React.useState(null);
+  
+  if (problemId)
+  {
     return (
       <View>
         <EmployeeIdeaTextInput/>
@@ -15,13 +19,25 @@ export default class App extends Component {
         <InputField/>
         <InputField/>
         <InputField/>
+        <Button
+            title = 'go back'
+            onPress={()=>setProblemId(null)}
+        />
       </View>
-      );
+      )
+  }
+  else
+  { 
+    return (
+      <View>
+        <ViewProblems setProblemId={setProblemId}/>
+      </View>
+      )
   }
 }
 
+export default App
 
-// // export default function App() {
 //   const UselessTextInput = () => {
 //     const [value, onChangeText] = React.useState("What's your idea?");
 
