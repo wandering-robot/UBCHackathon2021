@@ -1,8 +1,8 @@
 
 import React, { Component } from 'react';
-import { Text, TextInput, View, Form, Button } from 'react-native';
+import { StyleSheet, Text, TextInput, View, Form, Button } from 'react-native';
 
-var userdetails = "Eric L, Marketing"
+var userdetails = "John Locke, Accountant"
 const EmployeeIdeaTextInput = () => {
   const [text, setText] = React.useState('');
   const [text2, setText2] = React.useState('');
@@ -37,13 +37,17 @@ const EmployeeIdeaTextInput = () => {
 
   <View style={{padding: 10}}>
     {/* USER DETAILS HERE           */}
-      <Text style={{padding:10, fontsize:30}}> 
+      {/* <Text style={{
+        height: 'auto',
+        padding:10,
+        fontsize:40,
+        backgroundColor: 'coral'}}> 
         {userdetails}
-      </Text>
+      </Text> */}
 
     {/* INPUT YOUR IDEA */}
       <TextInput
-        style={{height: 40}}
+        style={{height: 200}}
         placeholder="What's your idea?"
         onChangeText={text => setText(text)}
         defaultValue={text}
@@ -51,19 +55,21 @@ const EmployeeIdeaTextInput = () => {
           {/* INPUT YOUR IDEA */}
       <TextInput
         style={{height: 40}}
-        placeholder="What's your name?"
+        placeholder="Enter your name. If your answer wins, you'll get the recognition you deserve."
         onChangeText={text2 => setText2(text2)}
         defaultValue={text2}
       />
     
     {/* PRINTS TEXT USER ENTERED ABOVE */}
-      <Text style={{padding: 10, fontSize: 22}}>
+      {/* <Text style={{padding: 10, fontSize: 22}}>
         {text}
-        {text2}
       </Text>
+      <Text style={{padding: 10, fontSize: 16}}>
+        {text2}
+      </Text> */}
 
       <Button
-        title="Press me"
+        title="Submit Answer"
         onPress={PostSolution}
       />
     </View>
@@ -71,3 +77,20 @@ const EmployeeIdeaTextInput = () => {
 }
 
 export default EmployeeIdeaTextInput;
+
+const styles = StyleSheet.create({
+  header: {
+      height: 'auto',
+      width: '100%',
+      padding: 36,
+      backgroundColor: 'coral',
+  },
+  title: {
+      textAlign: 'center',
+      textAlignVertical: 'auto',
+      color: '#fff',
+      fontSize: 20,
+      fontWeight: 'bold',
+
+  }
+});
