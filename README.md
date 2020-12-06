@@ -1,5 +1,5 @@
-## UBCHackathon2021
-# To get started:
+# UBCHackathon2021
+## To get started:
 1. `git clone git@github.com:wandering-robot/UBCHackathon2021.git`
 * Requires ssh keys setup with github : https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/connecting-to-github-with-ssh
 2. `yarn`
