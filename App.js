@@ -17,7 +17,7 @@ export default function App() {
 
   return (
     <View>
-      <Button title="Button"/>
+      <Button title="I am a Button"/>
       <FlatList
         data={countriesData}
         contentContainerStyle={styles.container}
