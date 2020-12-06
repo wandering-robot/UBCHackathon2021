@@ -2,7 +2,7 @@
 ## To get started:
 1. `git clone git@github.com:wandering-robot/UBCHackathon2021.git`
 * Requires ssh keys setup with github : https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/connecting-to-github-with-ssh
-* alternative : https://github.com/wandering-robot/UBCHackathon2021.git
+* alternative if you don't want to use ssh: `git clone https://github.com/wandering-robot/UBCHackathon2021.git`
 2. `yarn`
 * Installs all node packages specified in package.json
 * Requires Yarn : https://classic.yarnpkg.com/en/docs/install/#windows-stable
