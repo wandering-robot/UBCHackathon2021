@@ -1,16 +1,23 @@
 import React, { Component } from 'react';
-import { TextInput } from 'react-native';
+import { Text, TextInput, View } from 'react-native';
 
-const UselessTextInput = () => {
-  const [value, onChangeText] = React.useState("What's your idea?");
 
+const EmployeeIdeaTextInput = () => {
+  const [text, setText] = React.useState('');
   return (
-    <TextInput
-      style={{ height: 400, borderColor: 'gray', borderWidth: 5 }}
-      onChangeText={text => onChangeText(text)}
-      value={value}
-    />
+    <View style={{padding: 10}}>
+      <TextInput
+        style={{height: 40}}
+        placeholder="What's your idea, bitch?"
+        onChangeText={text => setText(text)}
+        defaultValue={text}
+      />
+      <Text style={{padding: 10, fontSize: 42}}>
+        
+        {text}
+      </Text>
+    </View>
   );
 }
 
-export default UselessTextInput;
+export default EmployeeIdeaTextInput;
