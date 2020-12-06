@@ -1,13 +1,16 @@
 import React, {useState, useEffect, Component} from 'react';
 import { StyleSheet, Text, Button, FlatList, View, TextInput } from 'react-native';
 import InputField from './components/textdisplay'
-
-const box_1 = <InputField/>;
+import EmployeeIdeaTextInput from './components/TextInput'
+import ViewSolutions from './components/Solutions'
 
 export default class App extends Component {
+
   render() {
     return (
       <View>
+        <EmployeeIdeaTextInput/>
+        <ViewSolutions/>
         <InputField/>
         <InputField/>
         <InputField/>
