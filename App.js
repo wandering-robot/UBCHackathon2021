@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import { StyleSheet, Text, FlatList } from 'react-native';
+import { StyleSheet, Text, Button, FlatList, View } from 'react-native';
 
 export default function App() {
 
@@ -16,12 +16,15 @@ export default function App() {
   })
 
   return (
-    <FlatList
-      data={countriesData}
-      contentContainerStyle={styles.container}
-      keyExtractor={item => item.name}
-      renderItem={({item})=> <Text style={styles.text}>{item.name}</Text>}
-    />
+    <View>
+      <Button title="Button"/>
+      <FlatList
+        data={countriesData}
+        contentContainerStyle={styles.container}
+        keyExtractor={item => item.name}
+        renderItem={({item})=> <Text style={styles.text}>{item.name}</Text>}
+      />
+    </View>
   );
 }
 
