@@ -19,13 +19,13 @@
 
 ## Push code to remote 
 1. Before making local changes, checkout a new feature branch
-`git checkout -b <branchname>`
+* `git checkout -b <branchname>`
 2. make your changes then prep them for commit
-`git add -u`
+* `git add -u`
 * if you have new files, you will need to add them manually
-`git add <filename>`
+  * `git add <filename>`
 3. commit your files with a message
-`git commit -m "<message>"`
+* `git commit -m "<message>"`
 4. push your files to remote branch
-`git push origin <branchname>`
+* `git push origin <branchname>`
 5. When ready to merge files to main, open a pull request on GitHub then add someone as a reviewer and give us a shout 
