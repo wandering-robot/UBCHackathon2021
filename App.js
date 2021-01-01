@@ -1,27 +1,51 @@
 import React, {useState, useEffect, Component} from 'react';
 import { StyleSheet, Text, Button, FlatList, View, TextInput } from 'react-native';
 import InputField from './components/textdisplay'
-import EmployeeIdeaTextInput from './components/TextInput'
 import ViewSolutions from './components/Solutions'
 import ViewProblems from './components/Problems'
+import EmployeeIdeaTextInput from './components/SolutionTextInput'
+import ManagerProblemTextInput from './components/ProblemTextInput'
 
 
 const App = () => {
-  const [problemId, setProblemId] = React.useState(null);
+  const [viewId, setViewId] = React.useState(null);
   
-  if (problemId)
+  if (viewId == 1)
   {
     return (
       <View>
-        <EmployeeIdeaTextInput/>
-        <ViewSolutions/>
-        <InputField/>
-        <InputField/>
-        <InputField/>
-        <InputField/>
+        <ViewSolutions problemId='1' />
+        <Button
+            title = 'create solution'
+            onPress={()=>setViewId(2)}
+        />
         <Button
             title = 'go back'
-            onPress={()=>setProblemId(null)}
+            onPress={()=>setViewId(null)}
+        />
+      </View>
+      )
+  }
+  if (viewId == 2)
+  {
+    return (
+      <View>
+        <EmployeeIdeaTextInput setViewId={setViewId} />
+        <Button
+            title = 'go back'
+            onPress={()=>setViewId(null)}
+        />
+      </View>
+      )
+  }
+  if (viewId == 3)
+  {
+    return (
+      <View>
+        <ManagerProblemTextInput setViewId={setViewId}/>
+        <Button
+            title = 'go back'
+            onPress={()=>setViewId(null)}
         />
       </View>
       )
@@ -30,7 +54,11 @@ const App = () => {
   { 
     return (
       <View>
-        <ViewProblems setProblemId={setProblemId}/>
+        <ViewProblems setViewId={setViewId}/>
+        <Button
+            title = 'create problem'
+            onPress={()=>setViewId(3)}
+        />
       </View>
       )
   }

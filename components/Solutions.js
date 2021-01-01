@@ -1,19 +1,30 @@
 import React, { Component } from 'react';
-import { Text, View } from 'react-native';
+import { ImagePropTypes, Text, View } from 'react-native';
 
-var ProblemInfo = "What should we do to increase customer satisfaction?"
+var ProblemInfo1 = "The customers are upset!"
+var ProblemInfo2 = "I'm upset!"
+var infoToDisplay = "test"
 var Solution1 = "We should give them discounts"
 var Solution2 = "We should interview them and find out what they like and do more of that, and what they dislike and do less of that"
 var Solution3 = "We should lower our prices"
 var Solution4 = "We should tweak foo1 and fix bar3 and that will improve the product"
+var id = 0;
 
-const arr =[Solution1,Solution4,Solution2,Solution3,Solution4];
+const arr =[Solution1,Solution2,Solution3,Solution4];
 
-const ViewSolutions = () => {
+const ViewSolutions = (props) => {
     const [arr1, UpdateArray] = React.useState([]);
-
+    const id = 0;
+    console.log(props.setProblemId);
+    infoToDisplay = (props.setProblemId == 1) ? ProblemInfo1 : ProblemInfo2;
+    // if (props.problemId == 1)
+    //     infoToDisplay = ProblemInfo1;
+    // else
+    //     infoToDisplay = 
+    const url = 'https://vast-ocean-93287.herokuapp.com/evanCompany/' + props.problemId;
+    console.log(url);
     React.useEffect(() => {
-        fetch('https://vast-ocean-93287.herokuapp.com/evanCompany/2', {
+        fetch(url, {
         method: 'GET', // *GET, POST, PUT, DELETE, etc.
         headers: {
             'Content-Type': 'application/json'
@@ -27,7 +38,8 @@ const ViewSolutions = () => {
         .then(response => response.json())
         .then(response => {
             console.log(response);
-            arr.push(response.Company_Name);
+            console.log(response.data[0].solution);
+            arr.push(response.data[0].solution);
             UpdateArray(arr);
         })
      }, []);
@@ -36,7 +48,7 @@ const ViewSolutions = () => {
     return (
     <View>
         <Text style={{padding:10, fontsize:30}}> 
-        {ProblemInfo}
+        {infoToDisplay}
         </Text>
 
         {arr1.map(item => (

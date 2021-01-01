@@ -2,8 +2,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, TextInput, View, Form, Button } from 'react-native';
 
-var userdetails = "John Locke, Accountant"
-const EmployeeIdeaTextInput = () => {
+const ManagerProblemTextInput = (props) => {
   const [text, setText] = React.useState('');
   const [text2, setText2] = React.useState('');
 
@@ -48,14 +47,14 @@ const EmployeeIdeaTextInput = () => {
     {/* INPUT YOUR IDEA */}
       <TextInput
         style={{height: 200}}
-        placeholder="What's your idea?"
+        placeholder="What's your problem?"
         onChangeText={text => setText(text)}
         defaultValue={text}
       />
           {/* INPUT YOUR IDEA */}
       <TextInput
         style={{height: 40}}
-        placeholder="Enter your name. If your answer wins, you'll get the recognition you deserve."
+        placeholder="Enter manager name"
         onChangeText={text2 => setText2(text2)}
         defaultValue={text2}
       />
@@ -67,16 +66,11 @@ const EmployeeIdeaTextInput = () => {
       <Text style={{padding: 10, fontSize: 16}}>
         {text2}
       </Text> */}
-
-      <Button
-        title="Submit Answer"
-        onPress={PostSolution}
-      />
     </View>
   );
 }
 
-export default EmployeeIdeaTextInput;
+export default ManagerProblemTextInput;
 
 const styles = StyleSheet.create({
   header: {
